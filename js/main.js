@@ -80,6 +80,14 @@ Cheetah.prototype.update = function () {
         this.animation = this.walkAnimation;
         this.x += this.game.clockTick * this.speed;
     }
+    if (this.game.up) {
+        this.animation = this.walkAnimation;
+        this.y -= this.game.clockTick * this.speed;
+    }
+    if (this.game.down) {
+        this.animation = this.walkAnimation;
+        this.y += this.game.clockTick * this.speed;
+    }
     if (!this.game.right && !this.game.left) {
         this.animation = this.idleAnimation;
     }

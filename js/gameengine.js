@@ -43,13 +43,17 @@ GameEngine.prototype.startInput = function() {
     this.ctx.canvas.addEventListener("keydown", function(e) {
         console.log(e);
         if (e.keyCode === 37 ) {that.left = true;}
-        else if (e.keyCode === 39) { that.right = true; }
+        if (e.keyCode === 39) { that.right = true; }
+        if (e.keyCode === 38) {that.up = true;}
+        if (e.keyCode === 40) { that.down = true;}
         e.preventDefault();
     }, false);
 
     this.ctx.canvas.addEventListener("keyup", function(e) {
         if (e.keyCode === 37 ) {that.left = false;}
-        else if (e.keyCode === 39) { that.right = false; }
+        if (e.keyCode === 39) { that.right = false; }
+        if (e.keyCode === 38) {that.up = false;}
+        if (e.keyCode === 40) { that.down = false;}
         e.preventDefault();
     }, false);
 
