@@ -90,9 +90,9 @@ Cheetah.prototype.draw = function () {
     Entity.prototype.draw.call(this);
 }
 
-AM.queueDownload("/img/skeleton-idle_0-test.png");
-AM.queueDownload("/img/fghjkl.png");
-AM.queueDownload("/img/background.jpg");
+AM.queueDownload("img/skeleton-idle_0-test.png");
+AM.queueDownload("img/fghjkl.png");
+AM.queueDownload("img/background.jpg");
 
 AM.downloadAll(function () {
     var canvas = document.getElementById("gameWorld");
@@ -102,8 +102,8 @@ AM.downloadAll(function () {
     gameEngine.init(ctx);
     gameEngine.start();
 
-    gameEngine.addEntity(new Background(gameEngine, AM.getAsset("/img/background.jpg")));
-    gameEngine.addEntity(new Cheetah(gameEngine, AM.getAsset("/img/skeleton-idle_0-test.png"), AM.getAsset("/img/fghjkl.png")));
+    gameEngine.addEntity(new Background(gameEngine, AM.getAsset("img/background.jpg")));
+    gameEngine.addEntity(new Cheetah(gameEngine, AM.getAsset("img/skeleton-idle_0-test.png"), AM.getAsset("img/fghjkl.png")));
 
     console.log("All Done!");
 });
