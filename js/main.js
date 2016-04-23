@@ -72,6 +72,7 @@ Cheetah.prototype = new Entity();
 Cheetah.prototype.constructor = Cheetah;
 
 Cheetah.prototype.update = function () {
+    var last = {"x" : this.x, "y" : this.y};
     if (this.game.left) {
         this.animation = this.walkAnimation;
         this.x -= this.game.clockTick * this.speed;
@@ -88,7 +89,7 @@ Cheetah.prototype.update = function () {
         this.animation = this.walkAnimation;
         this.y += this.game.clockTick * this.speed;
     }
-    if (!this.game.right && !this.game.left) {
+    if ((this.x == last.x) && (this.y == last.y)) {
         this.animation = this.idleAnimation;
     }
 }
